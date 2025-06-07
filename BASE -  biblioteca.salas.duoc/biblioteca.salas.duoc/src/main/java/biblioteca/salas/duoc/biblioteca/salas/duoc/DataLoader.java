@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-/*@Profile("dev")*/ 
+@Profile("dev")
 @Component
 public class DataLoader implements CommandLineRunner {
 

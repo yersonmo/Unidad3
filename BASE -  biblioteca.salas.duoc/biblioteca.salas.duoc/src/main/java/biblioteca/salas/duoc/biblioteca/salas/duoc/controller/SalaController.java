@@ -5,15 +5,20 @@ import biblioteca.salas.duoc.biblioteca.salas.duoc.service.SalaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/salas")
+@Tag (name = "Salas", description = "Operaciones relacionadas con las salas")
 public class SalaController {
     @Autowired
     private SalaService salaService;
 
     @GetMapping
+    @Operation(summary = "Obtener todas las salas", description = "Devuelve una lista de todas las salas registradas")  
     public List<Sala> getAllSalas() {
         return salaService.findAll();
     }
